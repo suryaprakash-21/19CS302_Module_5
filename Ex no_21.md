@@ -1,4 +1,4 @@
-# EX 21 C program to calculate the area of a triangle using pointer.
+[# EX 21 C program to calculate the area of a triangle using pointer.
 ## DATE:
 ## AIM:
 To write a C program to calculate the area of a triangle using pointer.
@@ -25,3 +25,4 @@ RegisterNumber:
 
 ## Result:
 Thus the program was executed and the output was verified successfully.
+](https://github.com/suryaprakash-21/19CS302_Module_4)
