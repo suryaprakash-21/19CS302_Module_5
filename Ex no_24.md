@@ -1,52 +1,45 @@
-# EX 24 Create a structure program to read(empno,dept and basic pay) and store the data of 3 employees and calculate their Gross Salary(da =10% and HRA=30% from BP).
+# EX 25 C program to check whether a given character is a vowel or consonant using pointer
 ## DATE: 
 ## AIM:
-To Create a structure program to read(empno,dept and basic pay) and store the data of 3 employees and calculate their Gross Salary(da =10% and HRA=30% from BP).
+To write a C program to check whether a given character is a vowel or consonant using pointer
 
 ## Algorithm
 1. Start.
-2. Define a variables.
-3. Create a structure program to read(empno,dept and basic pay) and store the data of 3
-employees and calculate their Gross Salary(da =10% and HRA=30% from BP).
+2. Declare a variable value of type char.
+3. Prompt the user to enter a value.
 4. Read the value using scanf.
-5. Ask the user to make an input.
-6. Print out the answer.
-7. End.
+5. Find vowel and consonants
+6. End.
 
 ## Program:
 ```
 #include <stdio.h>
-struct Employee {
-int empno;
-char dept[100];
-float basic_pay;
-float gross_salary;
-float da;
-float hra;
-};
 int main() {
-struct Employee employees[3];
-for (int i = 0; i < 3; ++i) {
-scanf("%d", &employees[i].empno);
-scanf("%s", employees[i].dept);
-scanf("%f", &employees[i].basic_pay);
-employees[i].da = 0.1 * employees[i].basic_pay; // DA is 10% of Basic Pay
-employees[i].hra = 0.3 * employees[i].basic_pay; // HRA is 30% of Basic Pay
-employees[i].gross_salary = employees[i].basic_pay + employees[i].da +
-employees[i].hra;
+ char str[100];
+ char *p;
+ int vowels = 0, consonants = 0;
+ scanf(" %[^\n]", str);
+ p = str;
+ while (*p != '\0') {
+ if ((*p >= 'A' && *p <= 'Z') || (*p >= 'a' && *p <= 'z')) {
+ char ch = (*p >= 'A' && *p <= 'Z') ? *p + 32 : *p;
+ if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+ vowels++;
+ } else {
+ consonants++;
+ }
+ }
+ p++;
+ }
+ printf("Vowels: %d\n", vowels);
+ printf("Consonants: %d\n", consonants);
+ return 0;
 }
-printf("Details of the Employee:\n");
-for (int i = 0; i < 3; ++i) {
-printf("%d %s %.f %.f %.f %.2f\n", employees[i].empno, employees[i].dept,
-employees[i].basic_pay, employees[i].da, employees[i].hra, employees[i].gross_salary);
-}
-return 0;
-}
-
 ```
 
 ## Output:
-![image](https://github.com/user-attachments/assets/36b11155-c6a4-4a49-96c3-46400730056e)
+
+![image](https://github.com/user-attachments/assets/d4f4cc5d-e373-4b3b-872b-aac3a0c5327c)
 
 
 
